@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDIA CENTER</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- header -->
+    <header class="header" id="header">
+        <div class="head-top">
+            <div class="site-name">
+                <h2><span>MEDIA CENTER</span></h2>
+            </div>
+            <div class="site-nav">
+                <span id="nav-btn">MENU <i class="fas fa-bars"></i></span>
+            </div>
+        </div>
+
+
+        <h1>JADWAL</h1>
+        <table id="approvedTable" border="1" cellpadding="10" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Waktu Mulai</th>
+                    <th>Waktu Selesai</th>
+                    <th>Keterangan</th>
+                    <th>OPD</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+        <script>
+            async function fetchApprovedBookings() {
+                try {
+                    const response = await fetch('fetch_approved.php');
+                    const bookings = await response.json();
+                    renderApprovedBookings(bookings);
+                } catch (error) {
+                    console.error('Error fetching bookings:', error);
+                }
+            }
+    
+            function renderApprovedBookings(bookings) {
+                const tableBody = document.getElementById("approvedTable").getElementsByTagName("tbody")[0];
+                tableBody.innerHTML = ""; 
+    
+                bookings.forEach((booking) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${booking.date}</td>
+                        <td>${booking.start_time}</td>
+                        <td>${booking.end_time}</td>
+                        <td>${booking.keterangan}</td>
+                        <td>${booking.user}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+    
+            fetchApprovedBookings();
+        </script>
+    </header>
+    
+
+
+    <!-- side navbar -->
+    <div class="sidenav" id="sidenav">
+        <span class="cancel-btn" id="cancel-btn">
+            <i class="fas fa-times"></i>
+        </span>
+        <ul class="navbar">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="TataCara.html">Tata Cara</a></li>
+            <li><a href="InfoRuang.html">Informasi Ruangan</a></li>
+        </ul>
+        <button class="btn log-in" onclick="window.location.href='admin_login.php'">Masuk</button>
+    </div>
+    <!-- end of side navbar -->
+
+    <!-- fullscreen modal -->
+    <div id="modal"></div>
+    <!-- end of fullscreen modal -->
+
+    <!-- Form -->
+    <div class="book">
+        <form class="book-form" action="submit.php" method="POST" enctype="multipart/form-data">
+            <div class="form-item">
+                <label for="user">OPD: </label>
+                <input type="text" id="user" name="user">
+            </div>
+            <div class="form-item">
+                <label for="date">Tanggal: </label>
+                <input type="date" id="date" name="date">
+            </div>
+            <div class="form-item">
+                <label for="start-time">Waktu Mulai: </label>
+                <input type="time" id="start-time" name="start-time">
+            </div>
+            <div class="form-item">
+                <label for="end-time">Waktu Selesai: </label>
+                <input type="time" id="end-time" name="end-time">
+            </div>
+            <div class="form-item">
+                <label for="whatsapp">Nomor WhatsApp: </label>
+                <input type="text" id="whatsapp" name="whatsapp" placeholder="Masukkan nomor WhatsApp">
+            </div>
+            <div class="form-item">
+                <label for="upload-file">Upload Surat (opsional): </label>
+                <input type="file" id="upload-file" name="upload-file">
+            </div>
+            <div class="form-item">
+                <label for="keterangan">Keterangan: </label>
+                <input type="keterangan" id="keterangan" name="keterangan">
+            </div>
+            <div class="form-item">
+                <input type="submit" class="btn" value="Submit">
+            </div>
+        </form>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <ul class="social-icons">
+                <li class="flex">
+                    <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube">
+                        <img src="images/yt.png" alt="YouTube" width="32" height="32">
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+                        <img src="images/twt.png" alt="Twitter" width="32" height="32">
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook">
+                        <img src="images/fb.png" alt="Facebook" width="32" height="32">
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                        <img src="images/ig.png" alt="Instagram" width="32" height="32">
+                    </a>
+                </li>
+                <li class="flex">
+                    <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp">
+                        <img src="images/wa.png" alt="WhatsApp" width="32" height="32">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>

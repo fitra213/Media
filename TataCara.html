@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MEDIA CENTER</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <link rel = "icon" href = "images/logo.png" type = "image/png">
+    </head>
+    <body>
+
+        <!-- header -->
+        <header class = "header" id = "header">
+            <div class = "head-top">
+                <div class = "site-name">
+                    <h2>
+                    <span>MEDIA CENTER</span>
+                </h2>
+                </div>
+                <div class = "site-nav">
+                    <span id = "nav-btn">MENU <i class = "fas fa-bars"></i></span>
+                </div>
+            </div>
+            <div class = "head-bottom flex">
+                <h2 style="color: black;">Tata Cara Penggunaan Ruangan</h2>
+                <ul>
+                    <li style="text-align: left; color: black;">Jaga kebersihan ruangan sebelum, selama, dan setelah digunakan.</li>
+                    <li style="text-align: left; color: black;">Gunakan fasilitas ruangan dengan baik dan sesuai peruntukannya.</li>
+                    <li style="text-align: left; color: black;">Dilarang merokok dan membawa makanan/minuman yang dapat mengotori ruangan.</li>
+                    <li style="text-align: left; color: black;">Rapikan kembali kursi, meja, dan perlengkapan setelah selesai digunakan.</li>
+                    <li style="text-align: left; color: black;">Matikan lampu, AC, dan perangkat elektronik lainnya sebelum meninggalkan ruangan.</li>
+                    <li style="text-align: left; color: black;">Lapor kepada petugas jika terjadi kerusakan atau kehilangan fasilitas.</li>
+                </ul>
+            </div>
+        </header>
+        <!-- header -->
+
+              <!-- navbar -->
+        <div class = "sidenav" id = "sidenav">
+            <span class = "cancel-btn" id = "cancel-btn">
+                <i class = "fas fa-times"></i>
+            </span>
+
+        <ul class="navbar">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="TataCara.html">Tata Cara</a></li>
+            <li><a href="InfoRuang.html">Informasi Ruangan</a></li>
+        </ul>
+        <button class="btn log-in" onclick="window.location.href='admin_login.php'">Masuk</button>
+    </div>
+        <!-- end of side navbar -->
+
+        
+        <div id = "modal"></div>
+    
+
+        <!-- body content  -->
+        <section class="procedures sec-width" id="procedures">
+            <div class="title">
+                <h2 style="font-size: 14px; color: black;">Prosedur Sebelum Masuk</h2>
+            </div>
+            <div class="procedures-row" style="display: flex; gap: 24px; justify-content: center;">
+                <div class="procedure" style="flex: 1; text-align: center;">
+                    <button type="button" class="btn" style="font-size: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <span>😊</span>
+                        <span style="font-size: 1.2rem;">SENYUM</span>
+                    </button>
+                </div>
+                <div class="procedure" style="flex: 1; text-align: center;">
+                    <button type="button" class="btn" style="font-size: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <span>🙏</span>
+                        <span style="font-size: 1.2rem;">SALAM</span>
+                    </button>
+                </div>
+                <div class="procedure" style="flex: 1; text-align: center;">
+                    <button type="button" class="btn" style="font-size: 2.5rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                        <span>👋</span>
+                        <span style="font-size: 1.2rem;">SAPA</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <ul class="social-icons">
+                    <li class="flex">
+                        <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube">
+                            <img src="images/yt.png" alt="YouTube" width="32" height="32">
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+                            <img src="images/twt.png" alt="Twitter" width="32" height="32">
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook">
+                            <img src="images/fb.png" alt="Facebook" width="32" height="32">
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                            <img src="images/ig.png" alt="Instagram" width="32" height="32">
+                        </a>
+                    </li>
+                    <li class="flex">
+                        <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp">
+                            <img src="images/wa.png" alt="WhatsApp" width="32" height="32">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
