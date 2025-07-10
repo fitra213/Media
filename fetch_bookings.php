@@ -1,24 +1,23 @@
 <?php
-// Database connection
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "media_center_bookongs";
+$dbname = "media_center_bookings";
 
-// Create connection
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// SQL query to select approved bookings
+
 $sql = "SELECT user, tanggal, start_time, end_time FROM bookings WHERE status = 'setuju'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Output data of each row
+    
     while($row = $result->fetch_assoc()) {
         echo "<tr>
                 <td>" . $row["user"] . "</td>
