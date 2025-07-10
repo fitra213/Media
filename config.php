@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";         // Sesuaikan dengan username MySQL Anda
-$password = "";            // Sesuaikan dengan password MySQL Anda
+$username = "root";         
+$password = "";           
 $dbname = "media_center_booking";
 
 // Membuat koneksi
@@ -15,6 +15,5 @@ if ($conn->connect_error) {
     die("Koneksi gagal: " . $conn->connect_error);
 }
 
-// Mengatur zona waktu (opsional)
 date_default_timezone_set('Asia/Jakarta');
 ?>
