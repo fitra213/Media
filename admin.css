@@ -1,13 +1,13 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0; /* Hapus padding agar gambar benar-benar memenuhi layar */
+    padding: 0; 
     background-image: url('images/labju.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Tambahkan tinggi 100% viewport height */
-    overflow: hidden; /* Opsional: Mencegah scrollbar jika konten melebihi layar */
+    height: 100vh; 
+    overflow: hidden; 
 }
 
 table {
