@@ -22,7 +22,7 @@ if ($upload_file) {
     $allowed_types = array('pdf', 'doc', 'docx');
     $file_extension = strtolower(pathinfo($_FILES["upload-file"]["name"], PATHINFO_EXTENSION));
 
-    // Generate nama file unik dengan timestamp
+    
     $new_filename = time() . '_' . basename($_FILES["upload-file"]["name"]);
     $target_file = $target_dir . $new_filename;
 
@@ -32,7 +32,7 @@ if ($upload_file) {
         exit();
     }
 
-    // Buat direktori upload jika belum ada
+
     if (!file_exists($target_dir)) {
         mkdir($target_dir, 0777, true);
     }
@@ -45,7 +45,7 @@ if ($upload_file) {
     }
 }
 
-// Validasi ketersediaan jadwal
+
 $check_sql = "SELECT * FROM bookings WHERE date = ? AND ((start_time <= ? AND end_time > ?) OR (start_time < ? AND end_time >= ?))";
 $check_stmt = $conn->prepare($check_sql);
 $check_stmt->bind_param("sssss", $date, $start_time, $start_time, $end_time, $end_time);
