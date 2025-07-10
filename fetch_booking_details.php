@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-// Database configuration
+
 $host = 'localhost';
 $user = 'root';
 $password = '';
@@ -15,10 +15,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// Get the ID from the GET request
+
 $id = $_GET['id'];
 
-// SQL query to fetch booking details by ID
+
 $sql = "SELECT date, start_time, end_time FROM bookings WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
