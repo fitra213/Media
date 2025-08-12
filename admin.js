@@ -1,16 +1,17 @@
-// Fungsi untuk mengambil data booking dari database
+// Fungsi untuk mengambil data booking dari database dan menampilkannya di tabel admin
 async function fetchBookings() {
     try {
+        // Mengambil data booking dari server melalui fetch_data.php
         const response = await fetch('fetch_data.php');
         if (!response.ok) throw new Error('Network response was not ok');
         const bookings = await response.json();
-        renderBookings(bookings);
+        renderBookings(bookings); // Menampilkan data ke tabel
     } catch (error) {
         console.error('Error fetching bookings:', error);
     }
 }
 
-// Fungsi untuk menampilkan data booking ke dalam tabel
+// Fungsi untuk menampilkan data booking ke dalam tabel admin
 function renderBookings(bookings) {
     const tableBody = document.getElementById("bookingTable").getElementsByTagName("tbody")[0];
     tableBody.innerHTML = ""; // Membersihkan tabel sebelum menambahkan data baru
@@ -39,9 +40,10 @@ function renderBookings(bookings) {
     });
 }
 
-// Fungsi untuk mengupdate status booking (Setuju/Tolak)
+// Fungsi untuk mengupdate status booking (Setuju/Tolak) berdasarkan ID booking
 async function updateStatus(id, status) {
     try {
+        // Mengirim permintaan update status ke server (update_status.php)
         const response = await fetch('update_status.php', {
             method: 'POST',
             headers: {
@@ -53,7 +55,7 @@ async function updateStatus(id, status) {
         if (!response.ok) throw new Error('Network response was not ok');
         const result = await response.json();
         if (result.success) {
-            fetchBookings();
+            fetchBookings(); // Refresh data booking setelah update
         } else {
             alert('Error updating status');
         }
@@ -63,10 +65,12 @@ async function updateStatus(id, status) {
     }
 }
 
-// Fungsi untuk menghapus booking
+// Fungsi untuk menghapus booking berdasarkan ID
 async function deleteBooking(id) {
+    // Konfirmasi sebelum menghapus
     if (confirm('Apakah Anda yakin ingin menghapus booking ini?')) {
         try {
+            // Mengirim permintaan hapus ke server (delete_booking.php)
             const response = await fetch('delete_booking.php', {
                 method: 'POST',
                 headers: {
@@ -78,7 +82,7 @@ async function deleteBooking(id) {
             if (!response.ok) throw new Error('Network response was not ok');
             const result = await response.json();
             if (result.success) {
-                fetchBookings();
+                fetchBookings(); // Refresh data booking setelah dihapus
                 alert('Booking berhasil dihapus');
             } else {
                 alert('Error menghapus booking');
@@ -90,19 +94,23 @@ async function deleteBooking(id) {
     }
 }
 
+// Memanggil fungsi fetchBookings() saat halaman dimuat untuk menampilkan data booking
 fetchBookings();
 
 
+// Fungsi untuk mengambil data booking yang sudah disetujui dan menampilkannya di tabel "DISETUJUI"
 async function fetchApprovedBookings() {
     try {
+        // Mengambil data booking yang sudah disetujui dari server
         const response = await fetch('fetch_approved.php');
         const bookings = await response.json();
-        renderApprovedBookings(bookings);
+        renderApprovedBookings(bookings); // Menampilkan data ke tabel
     } catch (error) {
         console.error('Error fetching bookings:', error);
     }
 }
 
+// Fungsi untuk menampilkan data booking yang sudah disetujui ke tabel "DISETUJUI"
 function renderApprovedBookings(bookings) {
     const tableBody = document.getElementById("approvedTable").getElementsByTagName("tbody")[0];
     tableBody.innerHTML = "";
@@ -123,4 +131,5 @@ function renderApprovedBookings(bookings) {
     });
 }
 
+// Memanggil fungsi fetchApprovedBookings() saat halaman dimuat untuk menampilkan data yang sudah disetujui
 fetchApprovedBookings();

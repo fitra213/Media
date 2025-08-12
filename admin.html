@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="admin.css">
     <link rel="icon" href="images/logo.png" type="image/png">
 
+    <!-- Judul halaman admin -->
     <h1>PENGAJUAN PEMAKAIAN RUANGAN</h1>
+    <!-- Tabel untuk menampilkan semua pengajuan pemakaian ruangan -->
     <table id="bookingTable">
         <thead>
             <tr>
@@ -24,31 +26,35 @@
             </tr>
         </thead>
         <tbody>
+            <!-- Data booking akan diisi secara dinamis oleh admin.js -->
             </tbody>
     </table>
 
+</head>
 
-
-
-</body>
-<h1>DISETUJUI</h1>
-<table id="approvedTable" border="1" cellpadding="10" cellspacing="0">
-    <thead>
-        <tr>
-            <th>Tanggal</th>
-            <th>Waktu Mulai</th>
-            <th>Waktu Selesai</th>
-            <th>Keterangan</th>
-            <th>OPD</th>
-            <th>Surat</th>
-        </tr>
-    </thead>
-    <tbody>
-        </tbody>
-</table>
-<script src="admin.js"></script>
-<script>
-</script>
+<body>
+    <!-- Bagian untuk menampilkan data booking yang sudah disetujui -->
+    <h1>DISETUJUI</h1>
+    <table id="approvedTable" border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Waktu Mulai</th>
+                <th>Waktu Selesai</th>
+                <th>Keterangan</th>
+                <th>OPD</th>
+                <th>Surat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data booking yang disetujui akan diisi secara dinamis oleh admin.js -->
+            </tbody>
+    </table>
+    <!-- Memuat file JavaScript untuk logika admin -->
+    <script src="admin.js"></script>
+    <script>
+        
+    </script>
 </body>
 
 </html>

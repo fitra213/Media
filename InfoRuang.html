@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <!-- header -->
+        <!-- Header utama dan deskripsi ruangan -->
         <header class = "header" id = "header">
             <div class = "head-top">
                 <div class = "site-name">
@@ -28,7 +28,7 @@
         </header>
         <!-- end of header -->
 
-              <!--  navbar -->
+        <!-- Navbar samping untuk navigasi utama -->
         <div class = "sidenav" id = "sidenav">
             <span class = "cancel-btn" id = "cancel-btn">
                 <i class = "fas fa-times"></i>
@@ -43,11 +43,11 @@
     </div>
         <!--  navbar -->
 
-        <!-- fullscreen modal -->
+        <!-- fullscreen modal untuk popup -->
         <div id = "modal"></div>
         <!-- end of fullscreen modal -->
 
-        <!-- side navbar -->
+        <!-- Navbar samping tambahan (sepertinya duplikat, bisa dihapus jika tidak diperlukan) -->
         <div class = "sidenav" id = "sidenav">
             <span class = "cancel-btn" id = "cancel-btn">
                 <i class = "fas fa-times"></i>
@@ -62,6 +62,7 @@
         </div>
         <!-- end of side navbar -->
 
+        <!-- Bagian galeri ruangan dengan carousel gambar -->
         <section class="gallerys" id="gallerys">
             <div class="sec-width">
                 <div class="title">
@@ -85,6 +86,7 @@
                     </div>
                 </div>
                 <script>
+                // Script untuk mengatur carousel galeri gambar
                 document.addEventListener('DOMContentLoaded', function() {
                     const track = document.querySelector('.carousel-track');
                     const slides = Array.from(track.children);
@@ -110,6 +112,7 @@
                 });
                 </script>
                 <style>
+                /* Style untuk galeri dan carousel gambar */
                 .gallerys-container {
                     display: flex;
                     justify-content: center;

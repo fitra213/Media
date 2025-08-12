@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>MEDIA CENTER</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="main.css">
+        <script src="https://kit.fontawesome.com/dbed6b6114.js" crossorigin="anonymous"></script>
+        <link rel = "icon" href = "images/logo.png" type = "image/png">
+    </head>
+    <body>
+        
+        <!-- header -->
+        <header class = "header" id = "header">
+            <div class = "head-top">
+                <div class = "site-name">
+                    <h2>
+                        <span>MEDIA CENTER</span>
+                </h2>
+                </div>
+                <div class = "site-nav">
+                    <span id = "nav-btn">MENU <i class = "fas fa-bars"></i></span>
+                </div>
+            </div>
+
+            <div class = "head-bottom flex">
+                <h2>TEMPAT TINGGAL YANG BAGUS DAN NYAMAN</h2>
+                <p>Peneltian mengatakan, tempat yang nyaman dan bagus adalah salah satu faktor penting dari kebahagiaan. Layanan dan kenyamanan bagi tamu adalah prioritas kami.</p>
+                <button type = "button" class = "head-btn">PESAN SEKARANG!</button>
+            </div>
+        </header>
+        <!-- end of header -->
+
+        <!-- side navbar -->
+        <div class = "sidenav" id = "sidenav">
+            <span class = "cancel-btn" id = "cancel-btn">
+                <i class = "fas fa-times"></i>
+            </span>
+
+            <ul class = "navbar">
+                <li><a href = "index.html">home</a></li>
+                <li><a href = "procedure.html">procedures</a></li>
+                <li><a href = "gallerys.html">gallerys</a></li>
+            </ul>
+            <button class = "btn sign-up">Daftar</button>
+            <button class = "btn log-in">Masuk</button>
+        </div>
+        <!-- end of side navbar -->
+
+        <!-- fullscreen modal -->
+        <div id = "modal"></div>
+        <!-- end of fullscreen modal -->
+
+
+        <div class="book">
+            <form class="book-form">
+                <div class="form-item">
+                    <label for="user">User: </label>
+                    <input type="text" id="user" name="user">
+                </div>
+                <div class="form-item">
+                    <label for="date">Tanggal: </label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div class="form-item">
+                    <label for="start-time">Waktu Mulai: </label>
+                    <input type="time" id="start-time" name="start-time">
+                </div>
+                <div class="form-item">
+                    <label for="end-time">Waktu Selesai: </label>
+                    <input type="time" id="end-time" name="end-time">
+                </div>
+                <div class="form-item">
+                    <label for="whatsapp">Nomor WhatsApp: </label>
+                    <input type="text" id="whatsapp" name="whatsapp" placeholder="Masukkan nomor WhatsApp">
+                </div>
+                <div class="form-item">
+                    <label for="upload-file">Upload Surat (opsional): </label>
+                    <input type="file" id="upload-file" name="upload-file">
+                </div>
+                <div class="form-item">
+                    <input type="submit" class="btn" value="Submit">
+                </div>
+            </form>
+        </div>
+        
+        
+
+        <!-- body content  -->
+<section class = "procedures sec-width" id = "procedures">
+    <div class = "title">
+        <h2>Layanan</h2>
+    </div>
+    <div class = "procedures-container">
+        <!-- single procedure -->
+        <article class = "procedure">
+            <div class = "procedure-icon">
+                <span>
+                    <i class = "fas fa-utensils"></i>
+                </span>
+            </div>
+            <div class = "procedure-content">
+                <h2>Food procedure/ Food Runner</h2>
+                <p>Nikmati sarapan pagi dan makan malam di Hotel kami, dengan cita rasa yang nikmat, enak, dan bersih. Disajikan oleh chef professional kualitas dunia! Semua makanan tersaji gratis bagi para tamu hotel.</p>
+                <button type = "button" class = "btn">Lihat lainnya</button>
+            </div>
+        </article>
+        <!-- end of single procedure -->
+        <!-- single procedure -->
+        <article class = "procedure">
+            <div class = "procedure-icon">
+                <span>
+                    <i class = "fas fa-swimming-pool"></i>
+                </span>
+            </div>
+            <div class = "procedure-content">
+                <h2>Refreshment</h2>
+                <p>Hotel kami selalu ramah akan fasilitas-fasilitas refreshment, tersedia kolam  berenang yang luas dan nyaman, bagi orang dewasa dan anak-anak. Tersedia juga gym, arena bermain ank, dan lain-lain! Sehingga kebahagian Anda terjaga.</p>
+                <button type = "button" class = "btn">Lihat lainnya</button>
+            </div>
+        </article>
+        <!-- end of single procedure -->
+        <!-- single procedure -->
+        <article class = "procedure">
+            <div class = "procedure-icon">
+                <span>
+                    <i class = "fas fa-broom"></i>
+                </span>
+            </div>
+            <div class = "procedure-content">
+                <h2>Housekeeping</h2>
+                <p>Housekeeping kami selalu tersedia selama 24 jam membersihkan are hotel, sehingga kenyamanan, kebersihan, kerapian, dan keindahan hotel akan terjaga. Anda selalu bisa memanggil housekeeping kapan pun Anda mau!</p>
+                <button type = "button" class = "btn">Lihat lainnya</button>
+            </div>
+        </article>
+        <!-- end of single procedure -->
+        <!-- single procedure -->
+        <article class = "procedure">
+            <div class = "procedure-icon">
+                <span>
+                    <i class = "fas fa-door-closed"></i>
+                </span>
+            </div>
+            <div class = "procedure-content">
+                <h2>Room Security</h2>
+                <p>Hotel kami tersedia keamanan 24 jam, baik hotel dan kamar anda akan terjaga dengan aman selama 24 jam. Dengan ratusan cctv yang terpasang, kami menjamin keamanan kamar dan hotel! Segala aset anda akan terjaga dengan baik.</p>
+                <button type = "button" class = "btn">Lihat lainnya</button>
+            </div>
+        </article>
+        <!-- end of single procedure -->
+    </div>
+</section>
+        <br>
+        <br>
+
+        
+        <!-- footer -->
+        <footer class = "footer">
+            <div class = "footer-container">
+                <div>
+                    <ul class="social-icons">
+                        <li class="flex">
+                            <a href="https://youtube.com/yourchannel" target="_blank" aria-label="YouTube">
+                                <i class="fa fa-youtube fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="flex">
+                            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter">
+                                <i class="fa fa-twitter fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="flex">
+                            <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook">
+                                <i class="fa fa-facebook fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="flex">
+                            <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram">
+                                <i class="fa fa-instagram fa-2x"></i>
+                            </a>
+                        </li>
+                        <li class="flex">
+                            <a href="https://wa.me/yourphonenumber" target="_blank" aria-label="WhatsApp">
+                                <i class="fa fa-whatsapp fa-2x"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </footer>
+        <!-- end of footer -->
+        
+        <script src="script.js"></script>
+    </body>
+</html>

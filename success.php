@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Berhasil - Media Center</title>
     <style>
+        /* Style untuk halaman sukses booking */
         body {
             margin: 0;
             padding: 0;
@@ -49,9 +50,11 @@
             margin-bottom: 20px;
         }
     </style>
+    <!-- Memuat ikon font awesome untuk ikon centang -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
+    <!-- Container utama untuk pesan sukses booking -->
     <div class="success-container">
         <div class="icon">
             <i class="fas fa-check-circle"></i>
@@ -59,7 +62,8 @@
         <div class="success-message">
             TERIMA KASIH HARAP DITUNGGU KONFIRMASINYA
         </div>
+        <!-- Tombol kembali ke halaman beranda -->
         <a href="index.html" class="back-button">Kembali ke Beranda</a>
     </div>
 </body>
-</html> 
+</html>

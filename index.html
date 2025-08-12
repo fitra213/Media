@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <!-- header -->
+    <!-- Header utama dan navigasi -->
     <header class="header" id="header">
         <div class="head-top">
             <div class="site-name">
@@ -21,7 +21,7 @@
             </div>
         </div>
 
-
+        <!-- Tabel jadwal booking yang sudah disetujui -->
         <h1>JADWAL</h1>
         <table id="approvedTable" border="1" cellpadding="10" cellspacing="0">
             <thead>
@@ -38,6 +38,7 @@
         </table>
         
         <script>
+            // Fungsi untuk mengambil dan menampilkan data booking yang sudah disetujui
             async function fetchApprovedBookings() {
                 try {
                     const response = await fetch('fetch_approved.php');
@@ -48,6 +49,7 @@
                 }
             }
     
+            // Fungsi untuk menampilkan data booking ke tabel jadwal
             function renderApprovedBookings(bookings) {
                 const tableBody = document.getElementById("approvedTable").getElementsByTagName("tbody")[0];
                 tableBody.innerHTML = ""; 
@@ -65,13 +67,13 @@
                 });
             }
     
+            // Memanggil fungsi untuk menampilkan data booking yang sudah disetujui saat halaman dimuat
             fetchApprovedBookings();
         </script>
     </header>
     
 
-
-    <!-- side navbar -->
+    <!-- Side navbar untuk navigasi halaman -->
     <div class="sidenav" id="sidenav">
         <span class="cancel-btn" id="cancel-btn">
             <i class="fas fa-times"></i>
@@ -85,11 +87,11 @@
     </div>
     <!-- end of side navbar -->
 
-    <!-- fullscreen modal -->
+    <!-- fullscreen modal untuk popup -->
     <div id="modal"></div>
     <!-- end of fullscreen modal -->
 
-    <!-- Form -->
+    <!-- Form pengajuan booking ruangan -->
     <div class="book">
         <form class="book-form" action="submit.php" method="POST" enctype="multipart/form-data">
             <div class="form-item">
@@ -126,7 +128,7 @@
         </form>
     </div>
 
-
+    <!-- Footer dengan ikon media sosial -->
     <footer class="footer">
         <div class="footer-container">
             <ul class="social-icons">
